@@ -203,15 +203,14 @@
   <nav class="nav">
     <div class="container">
       <div class="nav__inner">
-        <a href="index.html" class="nav__logo">
+        <div class="nav__logo">
           <img src="assets/images/Color_logo_with_background_6d2b7.png" alt="AC Edu Works logo" onerror="this.style.display='none'">
-        </a>
+        </div>
         <button class="nav__toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav__links').classList.toggle('open')">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__links">
           <li><a href="lhschedule.html" class="active">LH Schedule</a></li>
-          <li><a href="mailto:andrew@ac-eduworks.com" class="nav__cta">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -294,6 +293,7 @@
               <th>Dates</th>
               <th>Course ID</th>
               <th>Venue</th>
+              <th style="text-align:center;">Taught by<br>Dr Andrew Chew</th>
             </tr>
           </thead>
           <tbody>
@@ -301,26 +301,37 @@
               <td>Apr 13 Mo, 14 Tu, 15 We</td>
               <td><span class="course-id-code">VLC-IT10A12-26-0653</span></td>
               <td><span class="badge-venue badge-venue--online">Online</span></td>
+              <td style="text-align:center;"></td>
+            </tr>
+            <tr>
+              <td>Apr 19 Su, 25 Sa, 26 Su</td>
+              <td><span class="course-id-code">HPC-IT10A12-26-0673</span></td>
+              <td><span class="badge-venue badge-venue--hpc">Haw Par Center (Orchard)</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
               <td>May 18 Mo, 19 Tu, 20 We</td>
               <td><span class="course-id-code">HPC-IT10A12-26-0669</span></td>
               <td><span class="badge-venue badge-venue--hpc">Haw Par Center (Orchard)</span></td>
+              <td style="text-align:center; font-size:1.3rem; color:#2a7a2a;">&#10003;</td>
             </tr>
             <tr>
               <td>Jun 8 Mo, 9 Tu, 10 We</td>
               <td><span class="course-id-code">NTUH-IT10A12-26-0653</span></td>
               <td><span class="badge-venue badge-venue--ntuh">NTUC Trade Union House</span></td>
+              <td style="text-align:center; font-size:1.3rem; color:#2a7a2a;">&#10003;</td>
             </tr>
             <tr>
               <td>Jul 6 Mo, 7 Tu, 8 We</td>
               <td><span class="course-id-code">HPC-IT10A12-26-0664</span></td>
               <td><span class="badge-venue badge-venue--hpc">Haw Par Center (Orchard)</span></td>
+              <td style="text-align:center; font-size:1.3rem; color:#2a7a2a;">&#10003;</td>
             </tr>
             <tr>
               <td>Aug 3 Mo, 4 Tu, 5 We</td>
               <td><span class="course-id-code">DNI-IT10A12-26-0658</span></td>
               <td><span class="badge-venue badge-venue--dni">Devan Nair Institution (Jurong)</span></td>
+              <td style="text-align:center; font-size:1.3rem; color:#2a7a2a;">&#10003;</td>
             </tr>
           </tbody>
         </table>
