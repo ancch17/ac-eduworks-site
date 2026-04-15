@@ -8,193 +8,49 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     /* ── YouTube section ─────────────────────────────── */
-    .yt-section {
-      padding: 72px 0 48px;
-      text-align: center;
-    }
-    .yt-section__title {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--text, #111);
-      margin-bottom: 12px;
-    }
-    .yt-section__sub {
-      color: var(--text-light, #555);
-      font-size: 1rem;
-      margin-bottom: 40px;
-    }
-    .yt-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    @media (max-width: 640px) {
-      .yt-grid { grid-template-columns: 1fr; }
-    }
-    .yt-thumb {
-      position: relative;
-      cursor: pointer;
-      border-radius: 4px;
-      overflow: hidden;
-      aspect-ratio: 16/9;
-      background: #000;
-    }
-    .yt-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: opacity 0.2s;
-    }
+    .yt-section { padding: 72px 0 48px; text-align: center; }
+    .yt-section__title { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 3rem); font-style: italic; font-weight: 400; color: var(--text, #111); margin-bottom: 12px; }
+    .yt-section__sub { color: var(--text-light, #555); font-size: 1rem; margin-bottom: 40px; }
+    .yt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 860px; margin: 0 auto; }
+    @media (max-width: 640px) { .yt-grid { grid-template-columns: 1fr; } }
+    .yt-thumb { position: relative; cursor: pointer; border-radius: 4px; overflow: hidden; aspect-ratio: 16/9; background: #000; }
+    .yt-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
     .yt-thumb:hover img { opacity: 0.85; }
-    .yt-thumb__play {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-    .yt-thumb__play svg {
-      width: 64px;
-      height: 64px;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
-    }
+    .yt-thumb__play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .yt-thumb__play svg { width: 64px; height: 64px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5)); }
 
     /* ── Important notice band ───────────────────────── */
-    .important-band {
-      background: #f0f0f0;
-      padding: 40px 0;
-      text-align: center;
-    }
-    .important-band__heading {
-      color: #e02020;
-      font-size: 1.6rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 16px;
-    }
-    .important-band__body {
-      color: #e02020;
-      font-size: 1.05rem;
-      font-weight: 700;
-      max-width: 760px;
-      margin: 0 auto 8px;
-      line-height: 1.6;
-    }
+    .important-band { background: #f0f0f0; padding: 40px 0; text-align: center; }
+    .important-band__heading { color: #e02020; font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 16px; }
+    .important-band__body { color: #e02020; font-size: 1.05rem; font-weight: 700; max-width: 760px; margin: 0 auto 8px; line-height: 1.6; }
 
     /* ── Course section ──────────────────────────────── */
-    .course-section {
-      padding: 64px 0;
-    }
-    .course-section + .course-section {
-      padding-top: 0;
-    }
-    .course-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-light, #666);
-      margin-bottom: 8px;
-    }
-    .course-title {
-      font-size: clamp(1.25rem, 3vw, 1.65rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.01em;
-      color: var(--text, #111);
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-    .course-meta {
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      color: var(--text-light, #555);
-    }
+    .course-section { padding: 64px 0; }
+    .course-section + .course-section { padding-top: 0; }
+    .course-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light, #666); margin-bottom: 8px; }
+    .course-title { font-size: clamp(1.25rem, 3vw, 1.65rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text, #111); margin-bottom: 16px; line-height: 1.3; }
+    .course-meta { margin-bottom: 8px; font-size: 0.95rem; color: var(--text-light, #555); }
     .course-meta strong { color: var(--text, #111); }
-    .course-help {
-      margin-top: 16px;
-      font-style: italic;
-      font-size: 0.92rem;
-      color: var(--text-light, #666);
-    }
-    .course-link {
-      display: inline-block;
-      margin-top: 6px;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--accent, #5c3d8f);
-      text-decoration: none;
-      word-break: break-all;
-    }
+    .course-help { margin-top: 16px; font-style: italic; font-size: 0.92rem; color: var(--text-light, #666); }
+    .course-link { display: inline-block; margin-top: 6px; font-size: 0.92rem; font-weight: 600; color: var(--accent, #5c3d8f); text-decoration: none; word-break: break-all; }
     .course-link:hover { text-decoration: underline; }
 
     /* ── Schedule table ──────────────────────────────── */
-    .schedule-table-wrap {
-      margin-top: 28px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    .schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-    .schedule-table th {
-      background: #1a1a2e;
-      color: #fff;
-      font-weight: 700;
-      text-align: left;
-      padding: 12px 16px;
-      white-space: nowrap;
-    }
-    .schedule-table td {
-      padding: 11px 16px;
-      border-bottom: 1px solid #e8e8e8;
-      vertical-align: middle;
-      color: var(--text, #111);
-    }
-    .schedule-table tbody tr:hover td {
-      background: #fafafa;
-    }
-    .badge-venue {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+    .schedule-table-wrap { margin-top: 28px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .schedule-table th { background: #1a1a2e; color: #fff; font-weight: 700; text-align: left; padding: 12px 16px; white-space: nowrap; }
+    .schedule-table td { padding: 11px 16px; border-bottom: 1px solid #e8e8e8; vertical-align: middle; color: var(--text, #111); }
+    .schedule-table tbody tr:hover td { background: #fafafa; }
+    .badge-venue { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
     .badge-venue--online { background: #e8f4fd; color: #1a6fa8; }
-    .badge-venue--hpc    { background: #fef3e2; color: #b06000; }
-    .badge-venue--ntuh   { background: #edf7ed; color: #2a7a2a; }
-    .badge-venue--dni    { background: #f3e8ff; color: #6b21a8; }
-
-    .course-id-code {
-      font-family: monospace;
-      font-size: 0.82rem;
-      color: #555;
-    }
-    .need-help {
-      margin-top: 12px;
-      font-style: italic;
-      font-size: 0.9rem;
-      color: var(--text-light, #666);
-    }
+    .badge-venue--hpc { background: #fef3e2; color: #b06000; }
+    .badge-venue--ntuh { background: #edf7ed; color: #2a7a2a; }
+    .badge-venue--dni { background: #f3e8ff; color: #6b21a8; }
+    .course-id-code { font-family: monospace; font-size: 0.82rem; color: #555; }
+    .need-help { margin-top: 12px; font-style: italic; font-size: 0.9rem; color: var(--text-light, #666); }
     .need-help a { color: var(--accent, #5c3d8f); font-weight: 600; text-decoration: none; }
     .need-help a:hover { text-decoration: underline; }
-
-    .divider {
-      border: none;
-      border-top: 2px solid #e8e8e8;
-      margin: 8px 0 56px;
-    }
+    .divider { border: none; border-top: 2px solid #e8e8e8; margin: 8px 0 56px; }
   </style>
 </head>
 <body>
@@ -222,12 +78,9 @@
       <h1 class="yt-section__title">Find Out More On Youtube</h1>
       <p class="yt-section__sub">Dr Andrew Chew tells you more what the AI courses are about</p>
       <div class="yt-grid">
-
         <!-- Video 3 (Advanced Gen AI) -->
         <a class="yt-thumb" href="https://www.youtube.com/watch?v=ZVtUu5T6ULo" target="_blank" rel="noopener" aria-label="Watch: Advanced Gen AI">
-          <img src="https://img.youtube.com/vi/ZVtUu5T6ULo/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/ZVtUu5T6ULo/hqdefault.jpg'"
-               alt="Advanced Gen AI">
+          <img src="https://img.youtube.com/vi/ZVtUu5T6ULo/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/ZVtUu5T6ULo/hqdefault.jpg'" alt="Advanced Gen AI">
           <div class="yt-thumb__play">
             <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
               <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z" fill="#ff0000"/>
@@ -235,12 +88,9 @@
             </svg>
           </div>
         </a>
-
         <!-- Video 4 (new) -->
         <a class="yt-thumb" href="https://youtu.be/vdLQFDYQdgY" target="_blank" rel="noopener" aria-label="Watch new video">
-          <img src="https://img.youtube.com/vi/vdLQFDYQdgY/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/vdLQFDYQdgY/hqdefault.jpg'"
-               alt="New AI Course Video">
+          <img src="https://img.youtube.com/vi/vdLQFDYQdgY/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/vdLQFDYQdgY/hqdefault.jpg'" alt="New AI Course Video">
           <div class="yt-thumb__play">
             <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
               <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z" fill="#ff0000"/>
@@ -248,7 +98,6 @@
             </svg>
           </div>
         </a>
-
       </div>
     </div>
   </section>
@@ -274,13 +123,10 @@
       <p class="course-meta">Learn and practice using AI tools for marketing planning and execution.</p>
       <p class="course-meta"><strong>Pace:</strong> Medium.</p>
       <p class="course-meta"><strong>Prerequisites:</strong> Must be good at operating a PC</p>
-
       <p class="need-help">
         <em>Need help?</em><br>
-        You can contact your regular sales rep at NTUC Learning HUB or call LHUB @
-        <a href="tel:+6563365482">+65 6336 5482</a>
+        You can contact your regular sales rep at NTUC Learning HUB or call LHUB @ <a href="tel:+6563365482">+65 6336 5482</a>
       </p>
-
       <p class="course-meta" style="margin-top:14px;"><strong>More about the course:</strong></p>
       <a class="course-link" href="https://www.ntuclearninghub.com/en-gb/-/course/empowering-digital-marketers-with-essential-ai-tools" target="_blank" rel="noopener">
         https://www.ntuclearninghub.com/en-gb/-/course/empowering-digital-marketers-with-essential-ai-tools
@@ -495,13 +341,10 @@
       <h2 class="course-title">ADVANCED GENERATIVE AI TECHNIQUES FOR MARKETING &amp; SALES</h2>
       <p class="course-meta"><strong>Pace:</strong> Fast.</p>
       <p class="course-meta"><strong>Prerequisites:</strong> Must be good at operating a PC. Familiarity with Gen AI Tools (ChatGPT, Gemini etc)</p>
-
       <p class="need-help">
         <em>Need help?</em><br>
-        You can contact your regular sales rep at NTUC Learning HUB or call LHUB @
-        <a href="tel:+6563365482">+65 6336 5482</a>
+        You can contact your regular sales rep at NTUC Learning HUB or call LHUB @ <a href="tel:+6563365482">+65 6336 5482</a>
       </p>
-
       <p class="course-meta" style="margin-top:14px;"><strong>More about the course:</strong></p>
       <a class="course-link" href="https://www.ntuclearninghub.com/en-gb/-/course/advanced-generative-ai-techniques-for-marketing-sales-sf" target="_blank" rel="noopener">
         https://www.ntuclearninghub.com/en-gb/-/course/advanced-generative-ai-techniques-for-marketing-sales-sf
@@ -511,86 +354,90 @@
         <table class="schedule-table">
           <thead>
             <tr>
-              <th>Dates</th>
+              <th>Course Period</th>
               <th>Course ID</th>
+              <th>Session</th>
               <th>Venue</th>
+              <th style="text-align:center;">Taught by<br>Dr Andrew Chew</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Mar 28 Sa, 29 Su</td>
-              <td><span class="course-id-code">HPC-IT10B18-26-0656</span></td>
-              <td><span class="badge-venue badge-venue--hpc">Haw Par Center (Orchard)</span></td>
-            </tr>
-            <tr>
-              <td>Apr 6 Mo, 7 Tu</td>
-              <td><span class="course-id-code">VLC-IT10B18-26-0650</span></td>
-              <td><span class="badge-venue badge-venue--online">Online</span></td>
-            </tr>
-            <tr>
-              <td>Apr 11 Sa, 12 Su</td>
-              <td><span class="course-id-code">HPC-IT10B18-26-0658</span></td>
-              <td><span class="badge-venue badge-venue--hpc">Haw Par Center (Orchard)</span></td>
-            </tr>
-            <tr>
-              <td>May 7 Th, 8 Fr</td>
+              <td>7 May – 8 May 2026</td>
               <td><span class="course-id-code">VLC-IT10B18-26-0652</span></td>
+              <td>Weekdays, Full Day (break 1–2pm)</td>
               <td><span class="badge-venue badge-venue--online">Online</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>May 9 Sa, 10 Su</td>
+              <td>9 May – 10 May 2026</td>
               <td><span class="course-id-code">NTUH-IT10B18-26-0650</span></td>
+              <td>Full Day Sat &amp; Sun, 9am–6pm</td>
               <td><span class="badge-venue badge-venue--ntuh">NTUC Trade Union House</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>May 16 Sa, 17 Su</td>
+              <td>16 May – 17 May 2026</td>
               <td><span class="course-id-code">HPC-IT10B18-26-0659</span></td>
-              <td><span class="badge-venue badge-venue--hpc">Haw Par Center (Orchard)</span></td>
+              <td>Full Day Sat &amp; Sun, 9am–6pm</td>
+              <td><span class="badge-venue badge-venue--hpc">Haw Par Centre (Orchard)</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>Jun 4 Th, 5 Fr</td>
-              <td><span class="course-id-code">DNI-IT10B18-26-0650</span></td>
-              <td><span class="badge-venue badge-venue--dni">Devan Nair Institute (Jurong)</span></td>
-            </tr>
-            <tr>
-              <td>Jun 11 Th, 12 Fr</td>
+              <td>11 Jun – 12 Jun 2026</td>
               <td><span class="course-id-code">NTUH-IT10B18-26-0654</span></td>
+              <td>Weekdays, Full Day (break 1–2pm)</td>
               <td><span class="badge-venue badge-venue--ntuh">NTUC Trade Union House</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>Jun 20 Sa, 21 Su</td>
+              <td>20 Jun – 21 Jun 2026</td>
               <td><span class="course-id-code">NTUH-IT10B18-26-0651</span></td>
+              <td>Full Day Sat &amp; Sun, 9am–6pm</td>
               <td><span class="badge-venue badge-venue--ntuh">NTUC Trade Union House</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>Jul 2 Th, 3 Fr</td>
+              <td>2 Jul – 3 Jul 2026</td>
               <td><span class="course-id-code">NTUH-IT10B18-26-0655</span></td>
+              <td>Weekdays, Full Day (break 1–2pm)</td>
               <td><span class="badge-venue badge-venue--ntuh">NTUC Trade Union House</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>Jul 11 Sa, 12 Su</td>
+              <td>11 Jul – 12 Jul 2026</td>
               <td><span class="course-id-code">NTUH-IT10B18-26-0652</span></td>
+              <td>Full Day Sat &amp; Sun, 9am–6pm</td>
               <td><span class="badge-venue badge-venue--ntuh">NTUC Trade Union House</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>Jul 18 Sa, 19 Su</td>
+              <td>18 Jul – 19 Jul 2026</td>
               <td><span class="course-id-code">NTUH-IT10B18-26-0653</span></td>
+              <td>Full Day Sat &amp; Sun, 9am–6pm</td>
               <td><span class="badge-venue badge-venue--ntuh">NTUC Trade Union House</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>Aug 1 Sa, 2 Su</td>
+              <td>1 Aug – 2 Aug 2026</td>
               <td><span class="course-id-code">HPC-IT10B18-26-0660</span></td>
-              <td><span class="badge-venue badge-venue--hpc">Haw Par Center (Orchard)</span></td>
+              <td>Full Day Sat &amp; Sun, 9am–6pm</td>
+              <td><span class="badge-venue badge-venue--hpc">Haw Par Centre (Orchard)</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>Aug 17 Mo, 18 Tu</td>
+              <td>17 Aug – 18 Aug 2026</td>
               <td><span class="course-id-code">DNI-IT10B18-26-0651</span></td>
+              <td>Weekdays, Full Day (break 1–2pm)</td>
               <td><span class="badge-venue badge-venue--dni">Devan Nair Institute (Jurong)</span></td>
+              <td style="text-align:center;"></td>
             </tr>
             <tr>
-              <td>Aug 19 We, 20 Th</td>
+              <td>19 Aug – 20 Aug 2026</td>
               <td><span class="course-id-code">VLC-IT10B18-26-0653</span></td>
+              <td>Weekdays, Full Day (break 1–2pm)</td>
               <td><span class="badge-venue badge-venue--online">Online</span></td>
+              <td style="text-align:center;"></td>
             </tr>
           </tbody>
         </table>
