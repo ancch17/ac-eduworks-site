@@ -27,12 +27,12 @@
     }
     .yt-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      max-width: 1100px;
+      max-width: 860px;
       margin: 0 auto;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
       .yt-grid { grid-template-columns: 1fr; }
     }
     .yt-thumb {
@@ -205,19 +205,11 @@
       <div class="nav__inner">
         <a href="index.html" class="nav__logo">
           <img src="assets/images/Color_logo_with_background_6d2b7.png" alt="AC Edu Works logo" onerror="this.style.display='none'">
-          <div class="nav__logo-text">
-            AC Edu Works
-            <span>Empower · Enable · Elevate</span>
-          </div>
         </a>
         <button class="nav__toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav__links').classList.toggle('open')">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-andrew.html">About Andrew</a></li>
-          <li><a href="corporate-training.html">Corporate Training</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
           <li><a href="lhschedule.html" class="active">LH Schedule</a></li>
           <li><a href="mailto:andrew@ac-eduworks.com" class="nav__cta">Contact</a></li>
         </ul>
@@ -232,37 +224,24 @@
       <p class="yt-section__sub">Dr Andrew Chew tells you more what the AI courses are about</p>
       <div class="yt-grid">
 
-        <!-- Video 1 -->
-        <a class="yt-thumb" href="https://www.youtube.com/watch?v=bj9P3W9Zhc4" target="_blank" rel="noopener" aria-label="Watch: Do Not Be Left Behind">
-          <img src="https://img.youtube.com/vi/bj9P3W9Zhc4/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/bj9P3W9Zhc4/hqdefault.jpg'"
-               alt="Do Not Be Left Behind">
-          <div class="yt-thumb__play">
-            <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z" fill="#ff0000"/>
-              <path d="M45 24 27 14v20" fill="#fff"/>
-            </svg>
-          </div>
-        </a>
-
-        <!-- Video 2 -->
-        <a class="yt-thumb" href="https://www.youtube.com/watch?v=tEESRxWtVnI" target="_blank" rel="noopener" aria-label="Watch: 2-Day Advanced Generative AI Techniques For Marketing & Sales">
-          <img src="https://img.youtube.com/vi/tEESRxWtVnI/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/tEESRxWtVnI/hqdefault.jpg'"
-               alt="2-Day Advanced Generative AI Techniques For Marketing & Sales">
-          <div class="yt-thumb__play">
-            <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z" fill="#ff0000"/>
-              <path d="M45 24 27 14v20" fill="#fff"/>
-            </svg>
-          </div>
-        </a>
-
-        <!-- Video 3 -->
+        <!-- Video 3 (Advanced Gen AI) -->
         <a class="yt-thumb" href="https://www.youtube.com/watch?v=ZVtUu5T6ULo" target="_blank" rel="noopener" aria-label="Watch: Advanced Gen AI">
           <img src="https://img.youtube.com/vi/ZVtUu5T6ULo/maxresdefault.jpg"
                onerror="this.src='https://img.youtube.com/vi/ZVtUu5T6ULo/hqdefault.jpg'"
                alt="Advanced Gen AI">
+          <div class="yt-thumb__play">
+            <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z" fill="#ff0000"/>
+              <path d="M45 24 27 14v20" fill="#fff"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Video 4 (new) -->
+        <a class="yt-thumb" href="https://youtu.be/vdLQFDYQdgY" target="_blank" rel="noopener" aria-label="Watch new video">
+          <img src="https://img.youtube.com/vi/vdLQFDYQdgY/maxresdefault.jpg"
+               onerror="this.src='https://img.youtube.com/vi/vdLQFDYQdgY/hqdefault.jpg'"
+               alt="New AI Course Video">
           <div class="yt-thumb__play">
             <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
               <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79 0 34 0 34 0S12.21 0 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 48 34 48 34 48s21.79 0 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24s0-10.95-1.48-16.26z" fill="#ff0000"/>
