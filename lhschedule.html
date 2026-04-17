@@ -74,33 +74,41 @@
     .wa-bubble:hover { background: #1ebe5d; transform: translateY(-2px); }
     .wa-bubble svg { width: 26px; height: 26px; flex-shrink: 0; }
 
-    /* ── Email enquiry link ──────────────────────────── */
-    .email-enquiry {
-      position: fixed;
-      bottom: 88px;
-      right: 28px;
-      z-index: 9999;
-      background: rgba(20, 20, 40, 0.82);
+    /* ── Email CTA button (footer) ───────────────────── */
+    @keyframes goldPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,110,0.0), 0 4px 18px rgba(0,0,0,0.35); }
+      50%       { box-shadow: 0 0 0 8px rgba(212,175,110,0.18), 0 4px 18px rgba(0,0,0,0.35); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    .email-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+      padding: 13px 32px;
+      border-radius: 50px;
+      background: linear-gradient(105deg, #2e1f0e 0%, #4a2e10 40%, #6b3f14 60%, #4a2e10 80%, #2e1f0e 100%);
+      background-size: 200% auto;
       color: #d4af6e;
       font-family: Georgia, 'Times New Roman', serif;
       font-style: italic;
-      font-size: 0.76rem;
-      letter-spacing: 0.05em;
+      font-size: 1.05rem;
+      letter-spacing: 0.09em;
       text-decoration: none;
-      padding: 6px 16px;
-      border-radius: 30px;
-      border: 1px solid rgba(212, 175, 110, 0.35);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      transition: background 0.2s, color 0.2s, border-color 0.2s;
-      white-space: nowrap;
+      border: 1.5px solid rgba(212,175,110,0.45);
+      animation: goldPulse 2.8s ease-in-out infinite, shimmer 4s linear infinite;
+      transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease;
     }
-    .email-enquiry:hover {
-      background: rgba(20, 20, 40, 0.96);
-      color: #e8c87a;
-      border-color: rgba(212, 175, 110, 0.65);
+    .email-cta svg { flex-shrink: 0; transition: transform 0.3s ease; }
+    .email-cta:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,110,0.85);
+      color: #f0d080;
     }
+    .email-cta:hover svg { transform: scale(1.15) rotate(-6deg); }
 
     /* ── Mobile responsive ───────────────────────────── */
     @media (max-width: 768px) {
@@ -118,7 +126,7 @@
       .divider { margin: 4px 0 36px; }
       .wa-bubble { bottom: 16px; right: 16px; padding: 10px 16px 10px 12px; font-size: 0.85rem; }
       .wa-bubble svg { width: 22px; height: 22px; }
-      .email-enquiry { bottom: 78px; right: 16px; font-size: 0.72rem; padding: 5px 13px; }
+      .email-cta { font-size: 0.92rem; padding: 11px 24px; }
     }
     @media (max-width: 480px) {
       .schedule-table { font-size: 0.72rem; }
@@ -513,14 +521,16 @@
     Enquire here
   </a>
 
-  <!-- ── Email Enquiry Link ────────────────────────── -->
-  <a class="email-enquiry" href="mailto:andrew@ac-eduworks.com" aria-label="Email enquiry">
-    andrew@ac-eduworks.com
-  </a>
-
   <!-- ── Footer ─────────────────────────────────────── -->
-  <footer style="background: #1a1a2e; padding: 40px 0; text-align: center;">
-    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-style: italic; font-weight: 400; letter-spacing: 0.06em; color: #d4af6e;">Enquire now.</span>
+  <footer style="background: #1a1a2e; padding: 48px 0 52px; text-align: center;">
+    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-style: italic; font-weight: 400; letter-spacing: 0.06em; color: #d4af6e; display: block;">Enquire now.</span>
+    <a class="email-cta" href="mailto:andrew@ac-eduworks.com" aria-label="Email Andrew">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="4" width="20" height="16" rx="3" stroke="#d4af6e" stroke-width="1.6" fill="none"/>
+        <path d="M2 7l10 7 10-7" stroke="#d4af6e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Email
+    </a>
   </footer>
 
 </body>
